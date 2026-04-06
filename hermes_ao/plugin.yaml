@@ -1,0 +1,36 @@
+name: agent-orchestrator
+version: "1.1.0"
+manifest_version: 1
+description: "Control and monitor Agent Orchestrator (AO) from Hermes — spawn agents, track sessions, manage issues, and get live status updates."
+author: "ComposioHQ"
+requires_env:
+  - name: AO_CWD
+    description: "Path to repo root containing agent-orchestrator.yaml"
+    secret: false
+optional_env:
+  - AO_API_URL
+  - AO_PATH
+  - GH_PATH
+  - AO_API_TIMEOUT
+  - AO_SPAWN_TIMEOUT
+  - AO_CLI_TIMEOUT
+provides_tools:
+  - ao_sessions
+  - ao_issues
+  - ao_spawn
+  - ao_send
+  - ao_kill
+  - ao_doctor
+  - ao_review_check
+  - ao_verify
+  - ao_session_cleanup
+  - ao_session_restore
+  - ao_session_claim_pr
+  - ao_create_issue
+  - ao_list_projects
+  - ao_backlog
+  - ao_merge_pr
+  - ao_observability
+  - ao_session_output
+provides_hooks:
+  - pre_llm_call

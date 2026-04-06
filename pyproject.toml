@@ -1,0 +1,59 @@
+[project]
+name = "hermes-ao"
+version = "1.0.0"
+description = "Agent Orchestrator plugin for Hermes — spawn and manage parallel AI coding agents from chat"
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.10"
+authors = [
+    { name = "ComposioHQ" },
+]
+keywords = ["hermes", "agent-orchestrator", "ai-agents", "coding-agents"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+]
+dependencies = [
+    "requests>=2.28.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/illegalcall/hermes-plugin-agent-orchestrator"
+Repository = "https://github.com/illegalcall/hermes-plugin-agent-orchestrator"
+Issues = "https://github.com/illegalcall/hermes-plugin-agent-orchestrator/issues"
+
+[project.entry-points."hermes_agent.plugins"]
+agent-orchestrator = "hermes_ao"
+
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["hermes_ao*"]
+
+[tool.setuptools.package-data]
+hermes_ao = ["plugin.yaml", "SKILL.md"]
+
+[tool.ruff]
+target-version = "py310"
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "UP", "B", "SIM"]
+ignore = [
+    "E501",   # line length handled by formatter
+    "SIM108", # ternary can reduce readability
+]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/test_unit.py" = ["E402"]
+"tests/test_live.py" = ["E402"]
+
+[tool.ruff.format]
+quote-style = "double"
