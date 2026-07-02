@@ -7,6 +7,15 @@
 
 **17 tools, 1 context-injection hook, setup CLI, orchestration skill.**
 
+## Companion X/Twitter Coordination
+
+For launch, support, or incident workflows, pair AO with
+[Hermes Tweet](https://github.com/Xquik-dev/hermes-tweet). Hermes Tweet can
+collect X/Twitter account, post, or trend context inside Hermes, while AO can
+coordinate follow-up agent sessions from Discord, Telegram, or other supported
+Hermes surfaces. Hermes Tweet is a third-party project maintained by Xquik-dev,
+not by this repository.
+
 ## Install and Setup
 
 ```bash
